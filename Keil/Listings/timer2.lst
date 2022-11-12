@@ -1,0 +1,47 @@
+C51 COMPILER V9.60.0.0   TIMER2                                                            06/12/2022 16:55:08 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TIMER2
+OBJECT MODULE PLACED IN .\Objects\timer2.obj
+COMPILER INVOKED BY: F:\Software\Keil\C51\BIN\C51.EXE timer2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listi
+                    -ngs\timer2.lst) TABS(2) OBJECT(.\Objects\timer2.obj)
+
+line level    source
+
+   1          /*#include<reg51.h>
+   2          sbit led = P1^0;        // LED connected to 1st pin of port P1
+   3          void delay();
+   4          void main()
+   5          {
+   6            unsigned int i;
+   7            while(1)
+   8            {
+   9            led=~led;       // Toggle LED 
+  10            for(i=0;i<1000;i++)
+  11            delay();        // Call delay
+  12            }
+  13          }
+  14          
+  15          void delay()
+  16          {
+  17            TMOD = 0x02;        // Mode1 of Timer0
+  18            TH0= 0xA2;        // Initial value loaded to Timer
+  19            TR0 = 1;        // Start Timer
+  20            while(TF0 == 0);      // Polling for flag bit
+  21            TR0 = 0;        // Stop Timer
+  22            TF0 = 0;        // Clear flag
+  23          }*/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

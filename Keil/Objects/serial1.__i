@@ -1,0 +1,1 @@
+"serial1.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\serial1.lst) TABS (2) OBJECT(.\Objects\serial1.obj)

@@ -1,0 +1,52 @@
+A51 MACRO ASSEMBLER  ALPS2                                                                06/12/2022 17:36:02 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\alps2.obj
+ASSEMBLER INVOKED BY: F:\Software\Keil\C51\BIN\A51.EXE alps2.a51 SET(SMALL) DEBUG PRINT(.\Listings\alps2.lst) OBJECT(.\O
+                      bjects\alps2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0h
+0000 759850            2     mov scon, #50h
+0003 758920            3     mov tmod, #20h
+0006 758DFD            4     mov th1, #-3
+0009 D28E              5     setb tr1
+000B                   6     repeat:
+000B 759959            7             mov sbuf, #"Y"
+000E 111C              8             acall tran
+0010 759945            9             mov sbuf, #"E"
+0013 111C             10             acall tran
+0015 759953           11             mov sbuf, #"S"
+0018 111C             12             acall tran
+001A 80EF             13             sjmp repeat
+                      14             
+001C                  15     tran:
+001C 3099FD           16             jnb ti, $
+001F C299             17             clr ti
+0021 22               18             ret
+                      19     
+                      20     end
+A51 MACRO ASSEMBLER  ALPS2                                                                06/12/2022 17:36:02 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+REPEAT . . . . . .  C ADDR   000BH   A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+TRAN . . . . . . .  C ADDR   001CH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

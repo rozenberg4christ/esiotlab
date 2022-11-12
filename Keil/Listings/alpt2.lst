@@ -1,0 +1,56 @@
+A51 MACRO ASSEMBLER  ALPT2                                                                06/12/2022 17:28:52 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\alpt2.obj
+ASSEMBLER INVOKED BY: F:\Software\Keil\C51\BIN\A51.EXE alpt2.a SET(SMALL) DEBUG PRINT(.\Listings\alpt2.lst) OBJECT(.\Obj
+                      ects\alpt2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0h
+0000                   2     test:
+0000 759000            3             mov p1, #00h
+0003 1116              4             call inter
+                       5     
+0005                   6     timer:
+0005 758901            7             mov tmod, #01h
+0008 758C04            8             mov th0, #04h
+000B 758A04            9             mov tl0, #04h
+000E D28C             10             setb tr0
+0010 308DFD           11             jnb tf0, $
+0013 C28D             12             clr tf0
+0015 22               13             ret
+                      14             
+0016                  15     inter:
+0016 30A8FD           16             jnb ie.0, $
+0019 D290             17             setb p1.0
+001B 1105             18             call timer
+001D C290             19             clr p1.0
+001F 80F5             20             jmp inter
+                      21             
+                      22     end
+A51 MACRO ASSEMBLER  ALPT2                                                                06/12/2022 17:28:52 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+IE . . . . . . . .  D ADDR   00A8H   A   
+INTER. . . . . . .  C ADDR   0016H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TEST . . . . . . .  C ADDR   0000H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER. . . . . . .  C ADDR   0005H   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

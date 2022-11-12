@@ -1,0 +1,47 @@
+A51 MACRO ASSEMBLER  ALPS3                                                                06/12/2022 17:42:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\alps3.obj
+ASSEMBLER INVOKED BY: F:\Software\Keil\C51\BIN\A51.EXE alps3.a SET(SMALL) DEBUG PRINT(.\Listings\alps3.lst) OBJECT(.\Obj
+                      ects\alps3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0h
+0000 759850            2     mov scon, #50h
+0003 758000            3     mov p0, #00h
+0006 758920            4     mov tmod, #20h
+0009 758DFD            5     mov th1, #-3
+000C D28E              6     setb tr1
+                       7     
+000E                   8     here:
+000E 3098FD            9             jnb ri, $
+0011 E599             10             mov a, sbuf
+0013 F580             11             mov p0, a
+0015 C298             12             clr ri
+0017 80F5             13             sjmp here
+                      14     
+                      15     end
+A51 MACRO ASSEMBLER  ALPS3                                                                06/12/2022 17:42:11 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   000EH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

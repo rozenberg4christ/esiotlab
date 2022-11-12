@@ -1,0 +1,7 @@
+".\Objects\timer2.obj",
+".\Objects\STARTUP.obj",
+".\Objects\timer1.obj",
+".\Objects\serial1.obj",
+".\Objects\serial2.obj" 
+TO ".\Objects\Emb C" 
+PRINT(".\Listings\Emb C.m51") RAMSIZE(256) 

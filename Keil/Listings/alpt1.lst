@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  ALPT1                                                                06/12/2022 17:22:17 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\alpt1.obj
+ASSEMBLER INVOKED BY: F:\Software\Keil\C51\BIN\A51.EXE alpt1.a SET(SMALL) DEBUG PRINT(.\Listings\alpt1.lst) OBJECT(.\Obj
+                      ects\alpt1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0h
+0000 758000            2     mov p0, #00h
+0003                   3     test:
+0003 D281              4             setb p0.1
+0005 110D              5             call timer
+0007 C281              6             clr p0.1
+0009 110D              7             call timer
+000B 80F6              8             jmp test
+                       9             
+000D                  10     timer:
+000D 758901           11             mov tmod, #01h
+0010 758C04           12             mov th0, #04h
+0013 758A04           13             mov tl0, #04h
+0016 D28C             14             setb tr0
+0018 308DFD           15             jnb tf0, $
+001B C28D             16             clr tf0
+001D 22               17             ret
+                      18             
+                      19     end
+A51 MACRO ASSEMBLER  ALPT1                                                                06/12/2022 17:22:17 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+P0 . . . . . . . .  D ADDR   0080H   A   
+TEST . . . . . . .  C ADDR   0003H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER. . . . . . .  C ADDR   000DH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

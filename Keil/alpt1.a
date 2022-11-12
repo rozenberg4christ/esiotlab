@@ -1,0 +1,19 @@
+org 0h
+mov p0, #00h
+test:
+	setb p0.1
+	call timer
+	clr p0.1
+	call timer
+	jmp test
+	
+timer:
+	mov tmod, #01h
+	mov th0, #04h
+	mov tl0, #04h
+	setb tr0
+	jnb tf0, $
+	clr tf0
+	ret
+	
+end

@@ -1,0 +1,7 @@
+".\Objects\STARTUP.obj",
+".\Objects\alpt1.obj",
+".\Objects\alpt2.obj",
+".\Objects\alps2.obj",
+".\Objects\alps3.obj" 
+TO ".\Objects\Emb asm" 
+PRINT(".\Listings\Emb asm.m51") RAMSIZE(256) 
